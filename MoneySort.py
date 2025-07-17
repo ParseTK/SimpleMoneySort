@@ -18,16 +18,16 @@ from decimal import Decimal
 # possibly add inventory per register and compare to a total inventory
 
 
-hundred: Decimal = Decimal("100.00")
-fifty: Decimal = Decimal("50.00")
-twenty: Decimal = Decimal("20.00")
-ten: Decimal = Decimal("10.00")
-five: Decimal = Decimal("5.00")
-one: Decimal = Decimal("1.00")
-quarter: Decimal = Decimal("0.25")
-dime: Decimal = Decimal("0.10")
-nickel: Decimal = Decimal("0.05")
-penny: Decimal = Decimal("0.01")
+HUNDRED: Decimal = Decimal("100.00")
+FIFTY: Decimal = Decimal("50.00")
+TWENTY: Decimal = Decimal("20.00")
+TEN: Decimal = Decimal("10.00")
+FIVE: Decimal = Decimal("5.00")
+ONE: Decimal = Decimal("1.00")
+QUARTER: Decimal = Decimal("0.25")
+DIME: Decimal = Decimal("0.10")
+NICKEL: Decimal = Decimal("0.05")
+PENNY: Decimal = Decimal("0.01")
 
 def make_change() -> Decimal:
     # placeholder for make change
