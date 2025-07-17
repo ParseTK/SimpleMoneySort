@@ -29,20 +29,34 @@ DIME: Decimal = Decimal("0.10")
 NICKEL: Decimal = Decimal("0.05")
 PENNY: Decimal = Decimal("0.01")
 
-def make_change() -> Decimal:
+def make_change_menu() -> None:
     # placeholder for make change
     while True:
         # display menu
-        print("\nHow would you like your money split? ")
+        print("\nHow would you like your change? ")
         print("1. Large Bills")
         print("2. Mixed Bills")
         print("3. Custom Bills")
-        print("4. Quit")
+        print("4. Return")
 
-        menu_choice: str = input("Enter menu option [1-4]: ")
-        menu_choice_int: int = int(menu_choice)
+        menu_choice: int = int(input("Enter menu option [1-4]: "))
 
-        # print("Splitting money...")
+        try:
+            match menu_choice:
+                case 1:
+                    print("Distributing bills by largest...")
+                case 2:
+                    print("Distributing mixed bills...")
+                case 3:
+                    print("Distributing custom bills...")
+                case 4:
+                    print("returning...")
+                    break
+        except ValueError:
+            print("Cant do that sorry.")
+
+            #input("...")
+            #print("Splitting money...")
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 def custom_bills() -> None:
     # placeholder for custom bills logic
@@ -67,7 +81,7 @@ def main() -> None:
         print("3. Reset")
         print("4. Quit")
 
-        choice = input("Enter menu option [1–4]: ").strip()
+        choice: str = input("Enter menu option [1–4]: ").strip()
 
         # validate that it's an integer, less than 5 and greater than 0
         if not choice.isdigit() or not (1 <= (option := int(choice)) <= 4):
@@ -77,7 +91,7 @@ def main() -> None:
         try:
             match option:
                 case 1:
-                    make_change()
+                    make_change_menu()
                 case 2:
                     inventory_change()
                 case 3:
@@ -85,6 +99,7 @@ def main() -> None:
                 case 4:
                     print("Goodbye!")
                     break
+
         except ValueError:
             print("Oops, that didn't seem to work. Please try again.")
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
